@@ -1,2 +1,0 @@
-# MyWeatherBuddy
-//MyWeatherBuddy
