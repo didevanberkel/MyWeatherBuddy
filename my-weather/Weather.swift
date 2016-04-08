@@ -133,7 +133,11 @@ class Weather {
                         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                         dateFormatter.timeZone = NSTimeZone()
                         let locDate = dateFormatter.stringFromDate(date)
-                        self._day = locDate
+                        
+                        dateFormatter.dateFormat = "EEEE"
+                        let stringDate: String = dateFormatter.stringFromDate(date)
+                        
+                        self._day = ("\(stringDate) \(locDate)")
                     }
                     
                     for x in 1...list.count - 1 {
@@ -145,7 +149,11 @@ class Weather {
                             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                             dateFormatter.timeZone = NSTimeZone()
                             let dateArray = dateFormatter.stringFromDate(date1)
-                            self._dayArray.append(dateArray)
+                            
+                            dateFormatter.dateFormat = "EEEE"
+                            let stringDate: String = dateFormatter.stringFromDate(date1)
+                            
+                            self._dayArray.append("\(stringDate) \(dateArray)")
                         }
                     }
                     

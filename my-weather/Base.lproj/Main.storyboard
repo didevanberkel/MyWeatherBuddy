@@ -22,7 +22,7 @@
                                 <rect key="frame" x="20" y="65" width="560" height="515"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02d" translatesAutoresizingMaskIntoConstraints="NO" id="y7r-QQ-36l">
-                                        <rect key="frame" x="-70" y="104" width="700" height="170"/>
+                                        <rect key="frame" x="-91" y="94" width="742" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="y7r-QQ-36l" secondAttribute="height" multiplier="70:17" id="CDj-6I-HzE"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="SEJ-pm-snJ"/>
@@ -103,28 +103,6 @@
                                         </subviews>
                                         <variation key="heightClass=regular-widthClass=regular" spacing="70"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO LOCATION AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="lSF-0Q-mtX">
-                                        <rect key="frame" x="8" y="50" width="544" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="38E-cY-JT3">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="55"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="150" id="FRH-1x-b65"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="40"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <size key="shadowOffset" width="2" height="1"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="FRH-1x-b65"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="60"/>
-                                        </variation>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO INFORMATION AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-cF-Dih">
                                         <rect key="frame" x="8" y="284" width="544" height="50"/>
                                         <constraints>
@@ -136,7 +114,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <size key="shadowOffset" width="2" height="1"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="1XZ-Ae-12F"/>
@@ -207,6 +185,30 @@
                                             <segue destination="Bw1-dZ-bVI" kind="show" identifier="Options" id="gzr-M6-LqW"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO LOCATION AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lSF-0Q-mtX">
+                                        <rect key="frame" x="50" y="40" width="460" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="440" id="29i-Ho-6Nz"/>
+                                            <constraint firstAttribute="height" constant="44" id="38E-cY-JT3">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="55"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="150" id="FRH-1x-b65"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="29i-Ho-6Nz"/>
+                                                <exclude reference="FRH-1x-b65"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="60"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -217,7 +219,7 @@
                                     <constraint firstItem="YMY-KH-4II" firstAttribute="top" secondItem="UQI-cF-Dih" secondAttribute="bottom" constant="15" id="7hQ-UD-Uwb">
                                         <variation key="heightClass=regular-widthClass=regular" constant="45"/>
                                     </constraint>
-                                    <constraint firstItem="lSF-0Q-mtX" firstAttribute="leading" secondItem="vZb-uq-wxP" secondAttribute="leading" constant="8" id="A2C-5s-qQ2"/>
+                                    <constraint firstItem="lSF-0Q-mtX" firstAttribute="leading" secondItem="vZb-uq-wxP" secondAttribute="leading" constant="50" id="A2C-5s-qQ2"/>
                                     <constraint firstItem="y7r-QQ-36l" firstAttribute="top" secondItem="lSF-0Q-mtX" secondAttribute="bottom" constant="10" id="B63-3X-qes">
                                         <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                                     </constraint>
@@ -225,7 +227,7 @@
                                     <constraint firstAttribute="trailing" secondItem="6dn-s6-Ewu" secondAttribute="trailing" constant="3" id="ClM-8e-GG4"/>
                                     <constraint firstItem="lSF-0Q-mtX" firstAttribute="centerX" secondItem="vZb-uq-wxP" secondAttribute="centerX" id="FFp-vm-q7a"/>
                                     <constraint firstItem="lpX-Pu-F9R" firstAttribute="centerX" secondItem="vZb-uq-wxP" secondAttribute="centerX" id="Hur-9v-UlD"/>
-                                    <constraint firstAttribute="trailing" secondItem="lSF-0Q-mtX" secondAttribute="trailing" constant="8" id="QRj-W3-QGg"/>
+                                    <constraint firstAttribute="trailing" secondItem="lSF-0Q-mtX" secondAttribute="trailing" constant="50" id="QRj-W3-QGg"/>
                                     <constraint firstAttribute="bottom" secondItem="lpX-Pu-F9R" secondAttribute="bottom" constant="40" id="Qdl-kW-2AG"/>
                                     <constraint firstItem="lpX-Pu-F9R" firstAttribute="top" secondItem="YMY-KH-4II" secondAttribute="bottom" constant="15" id="Su1-4g-tHL">
                                         <variation key="heightClass=regular-widthClass=regular" constant="30"/>
@@ -238,8 +240,8 @@
                                     <constraint firstItem="UQI-cF-Dih" firstAttribute="leading" secondItem="vZb-uq-wxP" secondAttribute="leading" constant="8" id="glg-vM-E2p"/>
                                     <constraint firstItem="6dn-s6-Ewu" firstAttribute="leading" secondItem="vZb-uq-wxP" secondAttribute="leading" constant="8" id="hIL-X5-Ohd"/>
                                     <constraint firstItem="y7r-QQ-36l" firstAttribute="centerX" secondItem="vZb-uq-wxP" secondAttribute="centerX" id="inL-a2-DU3"/>
-                                    <constraint firstItem="lSF-0Q-mtX" firstAttribute="top" secondItem="vZb-uq-wxP" secondAttribute="top" constant="50" id="jgJ-2C-EyE">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    <constraint firstItem="lSF-0Q-mtX" firstAttribute="top" secondItem="vZb-uq-wxP" secondAttribute="top" constant="40" id="jgJ-2C-EyE">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                                     </constraint>
                                     <constraint firstItem="lpX-Pu-F9R" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vZb-uq-wxP" secondAttribute="leading" constant="10" id="laI-fG-2zc"/>
                                     <constraint firstAttribute="trailing" secondItem="WoX-iV-xgg" secondAttribute="trailing" constant="8" id="mIO-wa-W24"/>
@@ -490,14 +492,16 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-xd-Gqk">
-                                                    <rect key="frame" x="8" y="8" width="324" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Apr 10, 2016, 11:00:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-xd-Gqk">
+                                                    <rect key="frame" x="8" y="8" width="190" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="324" id="PgX-0u-2pK"/>
+                                                        <constraint firstAttribute="width" constant="190" id="PgX-0u-2pK">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="350"/>
+                                                        </constraint>
                                                         <constraint firstAttribute="width" constant="126" id="ZW3-Xd-6cI"/>
                                                         <constraint firstAttribute="height" constant="21" id="w1l-Nq-WY0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">

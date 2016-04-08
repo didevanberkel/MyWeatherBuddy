@@ -23,6 +23,6 @@ class WeatherCell: UITableViewCell {
         }
         
         weatherImg.image = UIImage(named: "\(img)")
-        day.text = date
+        day.text = date.uppercaseString
     }
 }

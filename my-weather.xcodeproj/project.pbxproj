@@ -101,6 +101,7 @@
 		841C44B8007285A1B6357954 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA1816021CB1777400B9A01E /* GoogleMobileAds.framework */,
 				AA1815FE1CB176B300B9A01E /* SystemConfiguration.framework */,
 				AA1815FA1CB176A200B9A01E /* MessageUI.framework */,
 				AA1815F81CB1769D00B9A01E /* MediaPlayer.framework */,
@@ -129,7 +130,6 @@
 		AABDE5E91CADA610005CD74F = {
 			isa = PBXGroup;
 			children = (
-				AA1816021CB1777400B9A01E /* GoogleMobileAds.framework */,
 				AABDE5F41CADA610005CD74F /* my-weather */,
 				AABDE5F31CADA610005CD74F /* Products */,
 				7BA571D8EBA9C572488FE1B7 /* Pods */,

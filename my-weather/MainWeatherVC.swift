@@ -92,7 +92,6 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowMore" {
             let svc = segue.destinationViewController as! NextWeatherVC;
-            //print(weather.tempArray)
             svc.passedTemp = weather.tempArray
             svc.passedImage = weather.iconArray
             svc.passedDate = weather.localDateArray
@@ -123,13 +122,11 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
         _currLat = 52.379189
         _currLon = 4.899431
-        print("Your location isn't found")
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         _currLat = 52.379189
         _currLon = 4.899431
-        print("App may not (yet) authorized to obtain location information. Check status here and respond accordingly")
     }
 }
 
