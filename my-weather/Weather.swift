@@ -103,9 +103,6 @@ class Weather {
     }
     
     func downloadWeatherDetails(completed: DownloadComplete) {
-        self._tempArray.removeAll()
-        self._iconArray.removeAll()
-        self._dayArray.removeAll()
         
         if NSUserDefaults.standardUserDefaults().boolForKey("switchIsOn") {
             _weatherUrls = "\(FIRST_URL)\(_lat)\(SECOND_URL)\(_lon)\(THIRD_URL_F)"
@@ -115,6 +112,10 @@ class Weather {
         let weatherUrl = NSURL(string: _weatherUrls)!
         Alamofire.request(.GET, weatherUrl).responseJSON { response in
             let result = response.result
+            
+            self._tempArray.removeAll()
+            self._iconArray.removeAll()
+            self._dayArray.removeAll()
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 

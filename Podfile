@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'my-weather' do
 pod 'Alamofire', '~> 3.0'
+pod 'Google-Mobile-Ads-SDK', '~> 7.0'
 end
 
 
