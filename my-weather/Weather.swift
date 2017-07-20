@@ -118,7 +118,7 @@ class Weather {
             self._dayArray.removeAll()
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
-
+                
                 if let loc = dict["city"] as? Dictionary<String, AnyObject> {
                     if let locat = loc["name"] as? String {
                         self._location = locat
@@ -132,7 +132,7 @@ class Weather {
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateStyle = .medium
                         dateFormatter.timeStyle = .medium
-                        //dateFormatter.timeZone = NSTimeZone() as TimeZone!
+                        dateFormatter.timeZone = TimeZone.ReferenceType.local
                         let locDate = dateFormatter.string(from: date)
                         
                         dateFormatter.dateFormat = "EEEE"
@@ -148,7 +148,7 @@ class Weather {
                             let dateFormatter = DateFormatter()
                             dateFormatter.timeStyle = .medium
                             dateFormatter.dateStyle = .medium
-                            //dateFormatter.timeZone = NSTimeZone() as TimeZone!
+                            dateFormatter.timeZone = TimeZone.ReferenceType.local
                             let dateArray = dateFormatter.string(from: date1)
                             
                             dateFormatter.dateFormat = "EEEE"
