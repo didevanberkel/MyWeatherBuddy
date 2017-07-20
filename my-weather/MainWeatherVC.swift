@@ -3,7 +3,7 @@
 //  my-weather
 //
 //  Created by Dide van Berkel on 31-03-16.
-//  Copyright © 2016 Gary Grape Productions. All rights reserved.
+//  Copyright © 2017 Dide van Berkel. All rights reserved.
 //
 
 import UIKit
@@ -11,11 +11,11 @@ import CoreLocation
 import GoogleMobileAds
 
 class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
-
+    
     let locationManager = CLLocationManager()
     
-    private var _currLat: Double!
-    private var _currLon: Double!
+    fileprivate var _currLat: Double!
+    fileprivate var _currLon: Double!
     
     var lat: Double {
         if _currLat == nil {
@@ -38,7 +38,7 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var rain: UILabel!
     @IBOutlet weak var weatherDesc: UILabel!
     @IBOutlet weak var dayAndTime: UILabel!
-
+    
     var weather = Weather()
     var banner: GADBannerView!
     
@@ -58,73 +58,72 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
         banner.adUnitID = "ca-app-pub-3274698501837481/3640900453"
         banner.rootViewController = self
         let request: GADRequest = GADRequest()
-        banner.loadRequest(request)
-        banner.frame = CGRectMake(0, view.bounds.height - banner.frame.size.height, banner.frame.size.width, banner.frame.size.height)
+        banner.load(request)
+        banner.frame = CGRect(x: 0, y: view.bounds.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
         self.view.addSubview(banner)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         downloadAndUpdate()
     }
     
     func updateUI() {
         
-        if NSUserDefaults.standardUserDefaults().boolForKey("switchIsOn") {
+        if UserDefaults.standard.bool(forKey: "switchIsOn") {
             temp.text = "\(round(weather.temp * 10)/10)ºF"
         } else {
             temp.text = "\(round(weather.temp * 10)/10)ºC"
         }
-
-        location.text = weather.location.uppercaseString
+        
+        location.text = weather.location.uppercased()
         wind.text = "\(round(weather.wind * 10)/10) MPS"
         rain.text = "\(round(weather.rain * 10)/10) %"
-        weatherDesc.text = weather.description.uppercaseString
-        dayAndTime.text = weather.localDate.uppercaseString
+        weatherDesc.text = weather.description.uppercased()
+        dayAndTime.text = weather.localDate.uppercased()
         
         if weather.icon == "" {
-            weatherImg.hidden = true
+            weatherImg.isHidden = true
         } else {
-            weatherImg.hidden = false
+            weatherImg.isHidden = false
             weatherImg.image = UIImage(named: weather.icon)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMore" {
-            let svc = segue.destinationViewController as! NextWeatherVC;
+            let svc = segue.destination as! NextWeatherVC;
             svc.passedTemp = weather.tempArray
             svc.passedImage = weather.iconArray
             svc.passedDate = weather.localDateArray
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let currLat: Double = manager.location!.coordinate.latitude {
-            self._currLat = currLat
-            NSUserDefaults.standardUserDefaults().setDouble(self._currLat, forKey: "LAT")
-        }
-        if let currLon: Double = manager.location!.coordinate.longitude {
-            self._currLon = currLon
-            NSUserDefaults.standardUserDefaults().setDouble(self._currLon, forKey: "LON")
-        }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self._currLat = manager.location!.coordinate.latitude
+        UserDefaults.standard.set(self._currLat, forKey: "LAT")
+        
+        self._currLon = manager.location!.coordinate.longitude
+        UserDefaults.standard.set(self._currLon, forKey: "LON")
+        
         downloadAndUpdate()
     }
     
     func downloadAndUpdate() {
-        let lattitude = NSUserDefaults.standardUserDefaults().doubleForKey("LAT")
-        let longitude = NSUserDefaults.standardUserDefaults().doubleForKey("LON")
+        let lattitude = UserDefaults.standard.double(forKey: "LAT")
+        let longitude = UserDefaults.standard.double(forKey: "LON")
         weather.grabVariables(lattitude, long: longitude)
         weather.downloadWeatherDetails() { () -> () in
             self.updateUI()
         }
     }
     
-    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
         _currLat = 52.379189
         _currLon = 4.899431
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         _currLat = 52.379189
         _currLon = 4.899431
     }

@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main WeatherVC-->
@@ -15,14 +16,12 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZb-uq-wxP">
-                                <rect key="frame" x="20" y="65" width="560" height="515"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02d" translatesAutoresizingMaskIntoConstraints="NO" id="y7r-QQ-36l">
-                                        <rect key="frame" x="-91" y="94" width="742" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="y7r-QQ-36l" secondAttribute="height" multiplier="70:17" id="CDj-6I-HzE"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="SEJ-pm-snJ"/>
@@ -35,41 +34,34 @@
                                         </variation>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMY-KH-4II">
-                                        <rect key="frame" x="8" y="349" width="544" height="1"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="QwK-LE-8Et"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lpX-Pu-F9R">
-                                        <rect key="frame" x="121" y="365" width="319" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.0ºC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="fDz-kG-8s8">
-                                                <rect key="frame" x="0.0" y="0.0" width="171" height="97"/>
                                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="80"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="100"/>
                                                 </variation>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gsc-2Y-3Ao">
-                                                <rect key="frame" x="191" y="0.0" width="128" height="110"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H71-xT-W3g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="Mcg-OU-Swi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="gqr-wN-pOF"/>
                                                                     <constraint firstAttribute="height" constant="50" id="oT5-v3-ueR"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 MPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6uQ-2H-erI">
-                                                                <rect key="frame" x="50" y="0.0" width="78" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="50"/>
@@ -78,19 +70,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo6-Nl-Ipu">
-                                                        <rect key="frame" x="0.0" y="60" width="128" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop" translatesAutoresizingMaskIntoConstraints="NO" id="ByU-xL-6Ig">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="hz5-iY-nvO"/>
                                                                     <constraint firstAttribute="height" constant="50" id="vkm-e7-pSz"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="mXl-hm-dZY">
-                                                                <rect key="frame" x="50" y="0.0" width="78" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="50"/>
@@ -104,16 +93,15 @@
                                         <variation key="heightClass=regular-widthClass=regular" spacing="70"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO INFORMATION AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UQI-cF-Dih">
-                                        <rect key="frame" x="8" y="284" width="544" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="1XZ-Ae-12F"/>
                                             <constraint firstAttribute="height" constant="50" id="d1t-U6-hi9"/>
                                             <constraint firstAttribute="height" constant="44" id="p5m-Mm-Sfk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -126,7 +114,6 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoX-iV-xgg">
-                                        <rect key="frame" x="492" y="0.0" width="60" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="3tV-Rg-Hyf">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="150"/>
@@ -138,7 +125,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
                                         <state key="normal" title="MORE">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -153,7 +140,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dn-s6-Ewu">
-                                        <rect key="frame" x="8" y="5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="72" id="2HN-l6-9Ow"/>
                                             <constraint firstAttribute="height" constant="50" id="A7y-OU-cA8"/>
@@ -163,7 +149,7 @@
                                             <constraint firstAttribute="height" constant="40" id="tgo-T0-bG2"/>
                                         </constraints>
                                         <state key="normal" image="options">
-                                            <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -186,7 +172,6 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO LOCATION AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lSF-0Q-mtX">
-                                        <rect key="frame" x="50" y="40" width="460" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="440" id="29i-Ho-6Nz"/>
                                             <constraint firstAttribute="height" constant="44" id="38E-cY-JT3">
@@ -195,9 +180,9 @@
                                             <constraint firstAttribute="width" constant="150" id="FRH-1x-b65"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="shadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -210,7 +195,7 @@
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="WoX-iV-xgg" firstAttribute="top" secondItem="vZb-uq-wxP" secondAttribute="top" id="3kT-DW-v04">
                                         <variation key="heightClass=regular-widthClass=regular" constant="5"/>
@@ -271,10 +256,8 @@
                                 </variation>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPr-nb-rIU">
-                                <rect key="frame" x="15" y="15" width="540" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-zg-n2H">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="gij-TF-18a">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="50"/>
@@ -282,7 +265,6 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EARTH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-3l-g8y">
-                                        <rect key="frame" x="40" y="0.0" width="500" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="LDI-Zf-MvE">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="70"/>
@@ -292,7 +274,7 @@
                                             </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
-                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="60"/>
@@ -301,7 +283,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yPr-nb-rIU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="0sI-YU-Ixx"/>
                             <constraint firstItem="vZb-uq-wxP" firstAttribute="top" secondItem="yPr-nb-rIU" secondAttribute="bottom" id="1Bl-9N-BKH"/>
@@ -338,11 +320,10 @@
                         <viewControllerLayoutGuide type="bottom" id="oZe-pe-4Qr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IV6-7d-n4f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5m-1c-2ww">
-                                <rect key="frame" x="20" y="20" width="78" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0W6-nO-l1j">
                                         <variation key="heightClass=regular-widthClass=regular" constant="70"/>
@@ -353,7 +334,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
                                 <state key="normal" title="BACK">
-                                    <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="60"/>
@@ -364,7 +345,6 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICONS BY RODRIGO DIAS FERNANDES BRECKENFELD FROM NOUN PROJECT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVl-Xt-CC0">
-                                <rect key="frame" x="15" y="500" width="290" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Dbp-Q7-ssT">
                                         <variation key="heightClass=regular-widthClass=regular" constant="80"/>
@@ -374,14 +354,13 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="17"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="27"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAHRENHEIT:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHb-ya-LK1">
-                                <rect key="frame" x="20" y="100" width="175" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0d0-04-3X9"/>
                                     <constraint firstAttribute="width" constant="175" id="U1c-Ss-098">
@@ -390,7 +369,7 @@
                                     <constraint firstAttribute="width" constant="290" id="w7j-vO-616"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="36"/>
-                                <color key="textColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -402,13 +381,11 @@
                                 </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iRW-Ax-JUt">
-                                <rect key="frame" x="20" y="158" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchChanged:" destination="Bw1-dZ-bVI" eventType="valueChanged" id="nBE-Dr-SeA"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-Tv-4eK">
-                                <rect key="frame" x="94" y="149" width="60" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="1Pc-X4-WG3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="34J-VW-CUh"/>
@@ -418,7 +395,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tLn-bI-ThW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -430,7 +407,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gHb-ya-LK1" firstAttribute="top" secondItem="p5m-1c-2ww" secondAttribute="bottom" constant="30" id="CMI-KA-eic"/>
                             <constraint firstItem="iJ0-Tv-4eK" firstAttribute="leading" secondItem="iRW-Ax-JUt" secondAttribute="trailing" constant="25" id="Geg-WY-W5n"/>
@@ -466,34 +443,31 @@
                         <viewControllerLayoutGuide type="bottom" id="qjc-zG-pfu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ji0-Bw-ESf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xzd-bj-vU6">
-                                <rect key="frame" x="20" y="60" width="560" height="520"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="100" id="PdN-nz-DMb" customClass="WeatherCell" customModule="my_weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PdN-nz-DMb" id="pTv-Ec-aBH">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
+                                            <frame key="frameInset" width="335" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STz-lh-UyS">
-                                                    <rect key="frame" x="8" y="37" width="126" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="OJf-S8-NFR"/>
                                                         <constraint firstAttribute="width" constant="126" id="bit-hg-wZ4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="35"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Apr 10, 2016, 11:00:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-xd-Gqk">
-                                                    <rect key="frame" x="8" y="8" width="190" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="190" id="PgX-0u-2pK">
                                                             <variation key="heightClass=regular-widthClass=regular" constant="350"/>
@@ -502,7 +476,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="w1l-Nq-WY0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -511,21 +485,19 @@
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03d" translatesAutoresizingMaskIntoConstraints="NO" id="VrZ-WA-KPk">
-                                                    <rect key="frame" x="472" y="2" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="esa-UI-nMh"/>
                                                         <constraint firstAttribute="height" constant="75" id="fL4-GE-R9G"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="575-ao-6O9">
-                                                    <rect key="frame" x="8" y="86" width="544" height="1"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="5eg-2k-bIs"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.25098040700000002" green="0.57254904510000004" blue="0.65882354970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="t2O-xd-Gqk" firstAttribute="leading" secondItem="pTv-Ec-aBH" secondAttribute="leadingMargin" id="Dce-ec-BaG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VrZ-WA-KPk" secondAttribute="trailing" constant="5" id="Izi-D4-BHB"/>
@@ -555,7 +527,6 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbZ-vx-mEY">
-                                <rect key="frame" x="20" y="10" width="78" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="GsP-CE-Y16">
                                         <variation key="heightClass=regular-widthClass=regular" constant="150"/>
@@ -566,7 +537,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
                                 <state key="normal" title="BACK">
-                                    <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="60"/>
@@ -576,7 +547,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FbZ-vx-mEY" firstAttribute="top" secondItem="Ji0-Bw-ESf" secondAttribute="topMargin" constant="15" id="62s-l0-cUC">
                                 <variation key="heightClass=regular-widthClass=regular" constant="15"/>

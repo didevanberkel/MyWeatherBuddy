@@ -3,7 +3,7 @@
 //  my-weather
 //
 //  Created by Dide van Berkel on 01-04-16.
-//  Copyright © 2016 Gary Grape Productions. All rights reserved.
+//  Copyright © 2017 Dide van Berkel. All rights reserved.
 //
 
 import Foundation
@@ -11,22 +11,22 @@ import Alamofire
 
 class Weather {
     
-    private var _location: String!
-    private var _temp: Double!
-    private var _icon: String!
-    private var _description: String!
-    private var _wind: Double!
-    private var _rain: Double!
-    private var _day: String!
+    fileprivate var _location: String!
+    fileprivate var _temp: Double!
+    fileprivate var _icon: String!
+    fileprivate var _description: String!
+    fileprivate var _wind: Double!
+    fileprivate var _rain: Double!
+    fileprivate var _day: String!
     
-    private var _tempArray = [Double]()
-    private var _iconArray = [String]()
-    private var _dayArray = [String]()
+    fileprivate var _tempArray = [Double]()
+    fileprivate var _iconArray = [String]()
+    fileprivate var _dayArray = [String]()
     
-    private var _weatherUrls: String!
-    private var _lat: Double!
-    private var _lon: Double!
-
+    fileprivate var _weatherUrls: String!
+    fileprivate var _lat: Double!
+    fileprivate var _lon: Double!
+    
     var location: String {
         if _location == nil {
             _location = ""
@@ -97,20 +97,20 @@ class Weather {
         return _dayArray
     }
     
-    func grabVariables(latt: Double, long: Double) {
+    func grabVariables(_ latt: Double, long: Double) {
         _lat = latt
         _lon = long
     }
     
-    func downloadWeatherDetails(completed: DownloadComplete) {
-        
-        if NSUserDefaults.standardUserDefaults().boolForKey("switchIsOn") {
-            _weatherUrls = "\(FIRST_URL)\(_lat)\(SECOND_URL)\(_lon)\(THIRD_URL_F)"
+    func downloadWeatherDetails(_ completed: @escaping DownloadComplete) {
+        if UserDefaults.standard.bool(forKey: "switchIsOn") {
+            _weatherUrls = "\(FIRST_URL)\(_lat!)\(SECOND_URL)\(_lon!)\(THIRD_URL_F)"
         } else {
-            _weatherUrls = "\(FIRST_URL)\(_lat)\(SECOND_URL)\(_lon)\(THIRD_URL)"
+            _weatherUrls = "\(FIRST_URL)\(_lat!)\(SECOND_URL)\(_lon!)\(THIRD_URL)"
         }
-        let weatherUrl = NSURL(string: _weatherUrls)!
-        Alamofire.request(.GET, weatherUrl).responseJSON { response in
+        
+        
+        Alamofire.request(_weatherUrls).responseJSON { (response:DataResponse<Any>) in
             let result = response.result
             
             self._tempArray.removeAll()
@@ -118,7 +118,7 @@ class Weather {
             self._dayArray.removeAll()
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
-                
+
                 if let loc = dict["city"] as? Dictionary<String, AnyObject> {
                     if let locat = loc["name"] as? String {
                         self._location = locat
@@ -128,15 +128,15 @@ class Weather {
                 if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
                     
                     if let days = list[0]["dt"]! as? Double {
-                        let date = NSDate(timeIntervalSince1970: days)
-                        let dateFormatter = NSDateFormatter()
-                        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-                        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-                        dateFormatter.timeZone = NSTimeZone()
-                        let locDate = dateFormatter.stringFromDate(date)
+                        let date = Date(timeIntervalSince1970: days)
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateStyle = .medium
+                        dateFormatter.timeStyle = .medium
+                        //dateFormatter.timeZone = NSTimeZone() as TimeZone!
+                        let locDate = dateFormatter.string(from: date)
                         
                         dateFormatter.dateFormat = "EEEE"
-                        let stringDate: String = dateFormatter.stringFromDate(date)
+                        let stringDate: String = dateFormatter.string(from: date)
                         
                         self._day = ("\(stringDate) \(locDate)")
                     }
@@ -144,15 +144,15 @@ class Weather {
                     for x in 1...list.count - 1 {
                         //For NextWeatherVC:
                         if let days1 = list[x]["dt"]! as? Double {
-                            let date1 = NSDate(timeIntervalSince1970: days1)
-                            let dateFormatter = NSDateFormatter()
-                            dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-                            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-                            dateFormatter.timeZone = NSTimeZone()
-                            let dateArray = dateFormatter.stringFromDate(date1)
+                            let date1 = Date(timeIntervalSince1970: days1)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.timeStyle = .medium
+                            dateFormatter.dateStyle = .medium
+                            //dateFormatter.timeZone = NSTimeZone() as TimeZone!
+                            let dateArray = dateFormatter.string(from: date1)
                             
                             dateFormatter.dateFormat = "EEEE"
-                            let stringDate: String = dateFormatter.stringFromDate(date1)
+                            let stringDate: String = dateFormatter.string(from: date1)
                             
                             self._dayArray.append("\(stringDate) \(dateArray)")
                         }
@@ -182,7 +182,7 @@ class Weather {
                         if let wtr = weatherLst[0]["description"] as? String {
                             self._description = wtr
                         }
-        
+                        
                         if let wtrIcon = weatherLst[0]["icon"] as? String {
                             self._icon = wtrIcon
                         }
@@ -193,27 +193,17 @@ class Weather {
                         //For NextWeatherVC:
                         if let weatherLst2 = list[x]["weather"]! as? [Dictionary<String, AnyObject>] {
                             if let wtrIcon2 = weatherLst2[0]["icon"] as? String {
-                            self._iconArray.append(wtrIcon2)
+                                self._iconArray.append(wtrIcon2)
+                            }
                         }
-                    }
-                    
-                    if let windLst = list[0]["wind"]! as? Dictionary<String, AnyObject> {
-                        if let windSpeed = windLst["speed"] as? Double {
-                            self._wind = windSpeed
+                        
+                        if let windLst = list[0]["wind"]! as? Dictionary<String, AnyObject> {
+                            if let windSpeed = windLst["speed"] as? Double {
+                                self._wind = windSpeed
+                            }
                         }
                     }
                 }
-            }
-//            print(self._location)
-//            print(self._temp)
-//            print(self._rain)
-//            print(self._description)
-//            print(self._wind)
-//            print(self._icon)
-//            print(self._tempArray)
-//            print(self._iconArray)
-//            print(self._day)
-//            print(self._dayArray)
             }
             completed()
         }

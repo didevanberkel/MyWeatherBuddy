@@ -3,7 +3,7 @@
 //  my-weather
 //
 //  Created by Dide van Berkel on 01-04-16.
-//  Copyright © 2016 Gary Grape Productions. All rights reserved.
+//  Copyright © 2017 Dide van Berkel. All rights reserved.
 //
 
 import Foundation

@@ -3,7 +3,7 @@
 //  my-weather
 //
 //  Created by Dide van Berkel on 03-04-16.
-//  Copyright © 2016 Gary Grape Productions. All rights reserved.
+//  Copyright © 2017 Dide van Berkel. All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class OptionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if NSUserDefaults.standardUserDefaults().boolForKey("switchIsOn") {
+        if UserDefaults.standard.bool(forKey: "switchIsOn") {
             offOnLabel.text = "ON"
             mySwitch.setOn(true, animated:true)
         } else {
@@ -37,25 +37,25 @@ class OptionsVC: UIViewController {
         banner.adUnitID = "ca-app-pub-3274698501837481/3640900453"
         banner.rootViewController = self
         let request: GADRequest = GADRequest()
-        banner.loadRequest(request)
-        banner.frame = CGRectMake(0, view.bounds.height - banner.frame.size.height, banner.frame.size.width, banner.frame.size.height)
+        banner.load(request)
+        banner.frame = CGRect(x: 0, y: view.bounds.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
         self.view.addSubview(banner)
     }
     
-    @IBAction func backBtnPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func backBtnPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
-
-    @IBAction func switchChanged(sender: AnyObject) {
+    
+    @IBAction func switchChanged(_ sender: AnyObject) {
         
-        if mySwitch.on {
+        if mySwitch.isOn {
             offOnLabel.text = "ON"
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "switchIsOn")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set(true, forKey: "switchIsOn")
+            UserDefaults.standard.synchronize()
         } else {
             offOnLabel.text = "OFF"
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "switchIsOn")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set(false, forKey: "switchIsOn")
+            UserDefaults.standard.synchronize()
         }
     }
 }
