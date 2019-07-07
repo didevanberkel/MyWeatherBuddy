@@ -40,10 +40,11 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var dayAndTime: UILabel!
     
     var weather = Weather()
-    var banner: GADBannerView!
+    @IBOutlet weak var banner: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -54,17 +55,17 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func loadBanner() {
-        banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        
+        banner.adSize = kGADAdSizeSmartBannerPortrait
         banner.adUnitID = "ca-app-pub-3274698501837481/3640900453"
         banner.rootViewController = self
         let request: GADRequest = GADRequest()
         banner.load(request)
-        banner.frame = CGRect(x: 0, y: view.bounds.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
-        self.view.addSubview(banner)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         downloadAndUpdate()
     }
     
@@ -91,6 +92,7 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "ShowMore" {
             let svc = segue.destination as! NextWeatherVC;
             svc.passedTemp = weather.tempArray
@@ -100,6 +102,7 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         self._currLat = manager.location!.coordinate.latitude
         UserDefaults.standard.set(self._currLat, forKey: "LAT")
         
@@ -110,6 +113,7 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func downloadAndUpdate() {
+        
         let lattitude = UserDefaults.standard.double(forKey: "LAT")
         let longitude = UserDefaults.standard.double(forKey: "LON")
         weather.grabVariables(lattitude, long: longitude)
@@ -119,11 +123,13 @@ class MainWeatherVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        
         _currLat = 52.379189
         _currLon = 4.899431
     }
     
     internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
         _currLat = 52.379189
         _currLon = 4.899431
     }

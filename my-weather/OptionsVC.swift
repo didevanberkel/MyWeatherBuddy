@@ -16,7 +16,7 @@ class OptionsVC: UIViewController {
     @IBOutlet weak var offOnLabel: UILabel!
     @IBOutlet weak var mySwitch: UISwitch!
     
-    var banner: GADBannerView!
+    @IBOutlet weak var banner: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +33,11 @@ class OptionsVC: UIViewController {
     }
     
     func loadBanner() {
-        banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        banner.adSize = kGADAdSizeSmartBannerPortrait
         banner.adUnitID = "ca-app-pub-3274698501837481/3640900453"
         banner.rootViewController = self
         let request: GADRequest = GADRequest()
         banner.load(request)
-        banner.frame = CGRect(x: 0, y: view.bounds.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
-        self.view.addSubview(banner)
     }
     
     @IBAction func backBtnPressed(_ sender: AnyObject) {
